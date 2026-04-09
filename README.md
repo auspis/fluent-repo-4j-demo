@@ -57,12 +57,12 @@ What happens at startup:
 
 Once the application is running, open:
 
-- Swagger UI: `http://localhost:9023/swagger-ui.html`
-- OpenAPI JSON: `http://localhost:9023/v3/api-docs`
+- Swagger UI: [`http://localhost:9023/swagger-ui.html`](http://localhost:9023/swagger-ui.html)
+- OpenAPI JSON: [`http://localhost:9023/v3/api-docs`](http://localhost:9023/v3/api-docs)
 
 The user API is exposed under:
 
-- `http://localhost:9023/api/users`
+- [`http://localhost:9023/api/users`](http://localhost:9023/api/users)
 
 ## Example Endpoints
 
