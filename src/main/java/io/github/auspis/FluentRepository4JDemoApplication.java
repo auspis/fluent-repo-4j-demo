@@ -51,33 +51,17 @@ public class FluentRepository4JDemoApplication{
         return args -> {
             createUsersTable(dataSource, dsl);
 
-            System.out.println("\n=== 1) COUNT ===");
-            System.out.println("  count=" + userRepository.count());
+            User alice = new User("Alice Rossi", "alice.rossi@example.com", 28);
+            alice.setId(ThreadLocalRandom.current().nextLong(1, Integer.MAX_VALUE));
+            userRepository.save(alice);
 
-            System.out.println("\n=== 2) INSERT ===");
-            User inserted = new User("John Wick", "john.wick@example.com", 31);
-            inserted.setId(ThreadLocalRandom.current().nextLong(1, Integer.MAX_VALUE));
-            inserted = userRepository.save(inserted);
-            System.out.println("  Inserted: " + inserted);
+            User bob = new User("Bob Marley", "bob.marley@example.com", 35);
+            bob.setId(ThreadLocalRandom.current().nextLong(1, Integer.MAX_VALUE));
+            userRepository.save(bob);
 
-            System.out.println("\n=== 3) FIND after insert ===");
-            userRepository.findAll().forEach(user -> System.out.println("  " + user));
-
-            System.out.println("\n=== 4) UPDATE ===");
-            inserted.setAge(32);
-            inserted.setName("John Wick Updated");
-            User updated = userRepository.save(inserted);
-            System.out.println("  Updated: " + updated);
-
-            System.out.println("\n=== 5) FIND after update ===");
-            userRepository.findAll().forEach(user -> System.out.println("  " + user));
-
-            System.out.println("\n=== 6) DELETE ===");
-            userRepository.deleteById(updated.getId());
-            System.out.println("  Deleted id=" + updated.getId());
-
-            System.out.println("\n=== 7) COUNT final ===");
-            System.out.println("  count=" + userRepository.count());
+            User carol = new User("Carol White", "carol.white@example.com", 42);
+            carol.setId(ThreadLocalRandom.current().nextLong(1, Integer.MAX_VALUE));
+            userRepository.save(carol);
         };
     }
 
