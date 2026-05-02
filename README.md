@@ -16,7 +16,7 @@ Its goal is to show a classic `controller -> service -> repository` architecture
 
 - Java 21
 - Spring Boot 3.5.14
-- `fluent-repo-4j` 1.2.2
+- `fluent-repo-4j` 1.3.0
 - MySQL 8
 - Testcontainers
 - Swagger UI via `springdoc-openapi`
