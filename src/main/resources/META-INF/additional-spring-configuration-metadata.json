@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "fluentsql.hooks.build.logging.includeParams",
+    "type": "java.lang.String",
+    "description": "A description for 'fluentsql.hooks.build.logging.includeParams'"
+  },
+  {
+    "name": "fluentsql.hooks.build.logging.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'fluentsql.hooks.build.logging.enabled'"
+  }
+]}

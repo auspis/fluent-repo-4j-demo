@@ -7,7 +7,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.13</version>
+    <version>3.5.14</version>
     <relativePath/>
   </parent>
 
@@ -28,12 +28,12 @@
     <dependency>
       <groupId>io.github.auspis</groupId>
       <artifactId>fluent-repo-4j</artifactId>
-      <version>1.2.2</version>
+      <version>1.3.0</version>
     </dependency>
     <dependency>
       <groupId>io.github.auspis.fluentsql4j</groupId>
       <artifactId>plugin-mysql</artifactId>
-      <version>1.3.4</version>
+      <version>1.4.0</version>
     </dependency>
 
     <dependency>

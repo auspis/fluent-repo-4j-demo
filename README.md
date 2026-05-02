@@ -44,6 +44,8 @@ Start the application with the Maven Wrapper:
 
 ```bash
 ./mvnw spring-boot:run
+# to enable statement log
+./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Dfluentsql.hooks.build.logging.enabled=true -Dfluentsql.hooks.build.logging.includeParams=true"
 ```
 
 What happens at startup:
