@@ -15,7 +15,7 @@ Its goal is to show a classic `controller -> service -> repository` architecture
 ## Tech Stack
 
 - Java 21
-- Spring Boot 3.5.13
+- Spring Boot 3.5.14
 - `fluent-repo-4j` 1.2.2
 - MySQL 8
 - Testcontainers
