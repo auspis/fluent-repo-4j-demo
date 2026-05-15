@@ -2,13 +2,18 @@
 
 This project is a minimal Spring Boot demo for [`fluent-repo-4j`](https://github.com/auspis/fluent-repo-4j).
 
-Its goal is to show a classic `controller -> service -> repository` architecture on top of a simple `User` domain, while keeping the setup easy to run locally. The application exposes a small CRUD API for users and includes Swagger UI so the demo can be explored directly from the browser.
+Its goal is to compare two repository styles side-by-side while keeping setup easy to run locally:
+
+- `Users` domain: classic OOP style (`CrudRepository`)
+- `Plants` domain: functional style (`FunctionalCrudRepository`)
+
+The application includes Swagger UI so the API contracts can be explored directly from the browser.
 
 ## What This Demo Shows
 
-- Spring Boot 3.5.13 application structure
-- `fluent-repo-4j` repository usage with a `User` entity
-- REST CRUD endpoints for creating, reading, updating, and deleting users
+- Spring Boot 3.5.14 application structure
+- Two approaches in one codebase: OOP and functional repository style
+- REST CRUD endpoints for users and plants
 - Swagger UI for browser-based interaction
 - Automatic MySQL startup with Docker through Testcontainers
 
@@ -16,10 +21,26 @@ Its goal is to show a classic `controller -> service -> repository` architecture
 
 - Java 21
 - Spring Boot 3.5.14
-- `fluent-repo-4j` 1.3.0
+- `fluent-repo-4j` 1.4.0
 - MySQL 8
 - Testcontainers
 - Swagger UI via `springdoc-openapi`
+
+## Design Comparison
+
+### Users (OOP style)
+
+- Repository extends `CrudRepository<User, Long>`
+- Service flow uses classic Spring Data semantics (`Optional`, `Iterable`)
+- Endpoints under `/api/users`
+
+### Plants (Functional style)
+
+- Repository extends `FunctionalCrudRepository<Plant, Long>`
+- Read operations use `ReadResult` (`Found`, `NotFound`, `Error`)
+- Write operations use `WriteResult` (`Success`, `Error`)
+- Service maps result states to HTTP responses
+- Endpoints under `/api/plants`
 
 ## Prerequisites
 
@@ -53,7 +74,8 @@ What happens at startup:
 - A MySQL 8 container is started with Docker
 - Spring Boot connects to that container automatically
 - The `users` table is created
-- A few demo users are inserted as seed data
+- The `plants` table is created
+- A few demo users and plants are inserted as seed data
 
 ## URLs
 
@@ -66,13 +88,28 @@ The user API is exposed under:
 
 - [`http://localhost:9023/api/users`](http://localhost:9023/api/users)
 
+The plant API is exposed under:
+
+- [`http://localhost:9023/api/plants`](http://localhost:9023/api/plants)
+
 ## Example Endpoints
+
+Users (OOP):
 
 - `GET /api/users`
 - `GET /api/users/{id}`
 - `POST /api/users`
 - `PUT /api/users/{id}`
 - `DELETE /api/users/{id}`
+
+Plants (Functional):
+
+- `GET /api/plants`
+- `GET /api/plants/{id}`
+- `GET /api/plants/watering-less-than?days=7`
+- `POST /api/plants`
+- `PUT /api/plants/{id}`
+- `DELETE /api/plants/{id}`
 
 ## Notes
 
