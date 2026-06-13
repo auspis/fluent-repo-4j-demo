@@ -20,8 +20,8 @@ The application includes Swagger UI so the API contracts can be explored directl
 ## Tech Stack
 
 - Java 21
-- Spring Boot 3.5.14
-- `fluent-repo-4j` 1.4.0
+- Spring Boot 3.5.15
+- `fluent-repo-4j` 1.4.1
 - MySQL 8
 - Testcontainers
 - Swagger UI via `springdoc-openapi`
